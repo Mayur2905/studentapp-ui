@@ -1,0 +1,19 @@
+plugins {
+    id 'war'
+}
+
+group 'com.jdevs'
+version '2.2-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'javax.servlet:javax.servlet-api:3.0.1'
+}
+
+war {
+    from sourceSets.main.output
+    webXml.file = file('WebContent/WEB-INF/web.xml')
+}
